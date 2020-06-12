@@ -1,0 +1,47 @@
+{
+  "name": "Preference",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Owner": true
+  },
+  "properties": {
+    "isDeleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contact": {
+      "type": "belongsTo",
+      "model": "Contact",
+      "foreignKey": ""
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "Contact",
+      "foreignKey": ""
+    },
+    "updatedBy": {
+      "type": "belongsTo",
+      "model": "Contact",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Invitation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "Timestamp": true,
+    "Owner": true
+  },
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "senderClaimed": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "receiverClaimed": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "content": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "receiverEmail": {
+      "type": "string"
+    },
+    "hasSignedUp": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "updatedBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

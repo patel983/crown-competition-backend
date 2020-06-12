@@ -1,0 +1,68 @@
+{
+  "name": "RaffleEntry",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "Timestamp": true,
+    "Owner": true
+  },
+  "properties": {
+    "entryNumber": {
+      "type": "number",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "isLuckyDip": {
+      "type": "boolean",
+      "default": false
+    },
+    "isWinningEntry": {
+      "type": "boolean",
+      "default": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "raffleDraw": {
+      "type": "belongsTo",
+      "model": "RaffleDraw",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "updatedBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

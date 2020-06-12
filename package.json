@@ -1,0 +1,42 @@
+{
+  "name": "winit-server",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=3.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server ../client/src/common/sdk -i enabled"
+  },
+  "dependencies": {
+    "@mean-expert/loopback-component-realtime": "^1.0.2",
+    "@mean-expert/loopback-sdk-builder": "^2.3.1",
+    "body-parser": "^1.17.1",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.21.2",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-component-storage-mongo": "^1.5.1",
+    "loopback-connector-mongodb": "^3.3.1",
+    "mongodb": "^3.5.2",
+    "node-schedule": "^1.3.2",
+    "serve-favicon": "^2.0.1",
+    "stripe": "^6.28.0",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "winit-server"
+}

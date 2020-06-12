@@ -1,0 +1,117 @@
+{
+  "name": "RaffleDraw",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "FireLoop": true,
+    "Timestamp": true,
+    "Owner": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "retailPrice": {
+      "type": "number"
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "maxWinners": {
+      "type": "number",
+      "required": true
+    },
+    "maxOptions": {
+      "type": "number",
+      "required": true,
+      "default": 100
+    },
+    "maxUserSelection": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "terms": {
+      "type": "string"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "isCompleted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "Product",
+      "foreignKey": ""
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "updatedBy": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "raffleEntries": {
+      "type": "hasMany",
+      "model": "RaffleEntry",
+      "foreignKey": ""
+    },
+    "raffleWinners": {
+      "type": "hasMany",
+      "model": "RaffleWinner",
+      "foreignKey": ""
+    },
+    "contacts": {
+      "type": "hasMany",
+      "model": "Contact",
+      "foreignKey": "",
+      "through": "ContactRaffle"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

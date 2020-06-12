@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../node_modules/@mean-expert/loopback-component-realtime/dist/mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "emailDataSource"
+  },
+  "Account": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": false
+    }
+  },
+  "Contact": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Preference": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RaffleDraw": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RaffleEntry": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Container": {
+    "dataSource": "filestore-mongo",
+    "public": true
+  },
+  "Payment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RaffleWinner": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Content": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ContactRaffle": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Invitation": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserInvitation": {
+    "dataSource": "db",
+    "public": true
+  }
+}
